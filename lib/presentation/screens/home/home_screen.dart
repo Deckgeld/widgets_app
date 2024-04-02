@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:widgets_app/config/menu/menu_items.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -64,9 +65,10 @@ class _CustomListTitle extends StatelessWidget {
             builder: (context) => const ButtonsScreen(),
           ),
         );*/
-
         //* La segunda es con el método pushNamed,... para esto se debe configurar el archivo main.dart
-        Navigator.of(context).pushNamed(menuItem.link);
+        // Navigator.of(context).pushNamed(menuItem.link);
+
+        context.push(menuItem.link);
       },
     );
   }
