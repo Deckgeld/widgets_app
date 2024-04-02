@@ -56,7 +56,17 @@ class _CustomListTitle extends StatelessWidget {
       iconColor: colors.primary,
 
       onTap: () {
-        //TODO: Navegar a la pantalla seleccionada
+        //Estas son 2 formas de navegar entre pantallas
+
+        //* La primera es con el método push
+        /*Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => const ButtonsScreen(),
+          ),
+        );*/
+
+        //* La segunda es con el método pushNamed,... para esto se debe configurar el archivo main.dart
+        Navigator.of(context).pushNamed(menuItem.link);
       },
     );
   }
