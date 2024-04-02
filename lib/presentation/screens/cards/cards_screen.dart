@@ -37,8 +37,14 @@ class _CardsView extends StatelessWidget {
         children: [
           //map es un método que recorre una lista y retorna una nueva lista
           ...cards.map((card) =>
-              _CardType1(elevation: card['elevation'], label: card['label'])
-          ),
+              _CardType1(elevation: card['elevation'], label: card['label'])),
+          ...cards.map((card) =>
+              _CardType2(elevation: card['elevation'], label: card['label'])),
+          ...cards.map((card) =>
+              _CardType3(elevation: card['elevation'], label: card['label'])),
+          ...cards.map((card) =>
+              _CardType4(elevation: card['elevation'], label: card['label'])),
+          const SizedBox(height: 50)
         ],
       ),
     );
@@ -64,13 +70,128 @@ class _CardType1 extends StatelessWidget {
                     child: IconButton(
                       icon: const Icon(Icons.more_vert_outlined),
                       onPressed: () {},
+                    )),
+                Align(
+                  alignment: Alignment.bottomLeft,
+                  child: Text(label),
+                )
+              ],
+            )));
+  }
+}
+
+class _CardType2 extends StatelessWidget {
+  final double elevation;
+  final String label;
+
+  const _CardType2({required this.elevation, required this.label});
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
+
+    //card es un widget que implementa una tarjeta
+    return Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: const BorderRadius.all(Radius.circular(12)),
+          side: BorderSide(
+            color: colors.outline
+          )
+        ),
+        elevation: elevation,
+        child: Padding(
+            padding: const EdgeInsets.fromLTRB(10, 5, 10, 10),
+            child: Column(
+              children: [
+                Align(
+                    alignment: Alignment.topRight,
+                    child: IconButton(
+                      icon: const Icon(Icons.more_vert_outlined),
+                      onPressed: () {},
+                    )),
+                Align(
+                  alignment: Alignment.bottomLeft,
+                  child: Text('$label - outline'),
+                )
+              ],
+            )));
+  }
+}
+
+class _CardType3 extends StatelessWidget {
+  final double elevation;
+  final String label;
+
+  const _CardType3({required this.elevation, required this.label});
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
+
+    return Card(
+      //surfaceVariant es un color personalizado
+      color: colors.surfaceVariant,
+        elevation: elevation,
+        child: Padding(
+            padding: const EdgeInsets.fromLTRB(10, 5, 10, 10),
+            child: Column(
+              children: [
+                Align(
+                    alignment: Alignment.topRight,
+                    child: IconButton(
+                      icon: const Icon(Icons.more_vert_outlined),
+                      onPressed: () {},
                     )
                 ),
                 Align(
                   alignment: Alignment.bottomLeft,
-                  child: Text( label ),
+                  child: Text( '$label - Filled' ),
                 )
               ],
             )));
+  }
+}
+
+class _CardType4 extends StatelessWidget {
+  final double elevation;
+  final String label;
+
+  const _CardType4({required this.elevation, required this.label});
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
+
+    return Card(
+      //clipBehavior es un parámetro que define cómo se recorta el contenido del widget
+      clipBehavior: Clip.hardEdge,
+      //surfaceVariant es un color personalizado
+      color: colors.surfaceVariant,
+        elevation: elevation,
+        child: Stack(
+          children: [
+            Image.network(
+              'https://picsum.photos/id/${elevation.toInt()}/600/250',
+              height: 350,
+              //fit es un parámetro que ajusta la imagen al tamaño del widget
+              fit: BoxFit.cover,
+            ),
+        
+            Align(
+                alignment: Alignment.topRight,
+                child: Container(
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20))
+                  ),
+                  child: IconButton(
+                    icon: const Icon(Icons.more_vert_outlined),
+                    onPressed: () {},
+                  ),
+                )
+            ),
+            
+          ],
+        ));
   }
 }
