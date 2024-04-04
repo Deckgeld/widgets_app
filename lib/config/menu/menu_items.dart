@@ -33,7 +33,6 @@ const appMenuItems = <MenuItem>[
     link: '/cards',
     icon: Icons.credit_card,
   ),
-  
   MenuItem(
     title: 'Progress Indicators',
     subTitle: 'Generales y controlados',
@@ -45,5 +44,11 @@ const appMenuItems = <MenuItem>[
     subTitle: 'Indicadores en pantalla ',
     link: '/snackbars',
     icon: Icons.info_outline,
+  ),
+  MenuItem(
+    title: 'Animated container',
+    subTitle: 'Stateful widget animado',
+    link: '/animated',
+    icon: Icons.check_box_outline_blank_rounded,
   ),
 ];
