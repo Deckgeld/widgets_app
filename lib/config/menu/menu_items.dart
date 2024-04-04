@@ -16,6 +16,12 @@ class MenuItem {
 
 const appMenuItems = <MenuItem>[
   MenuItem(
+    title: 'Inicio',
+    subTitle: 'Pantalla de inicio',
+    link: '/',
+    icon: Icons.home,
+  ),
+  MenuItem(
     title: 'Buttons',
     subTitle: 'Botones con estilo',
     link: '/buttons',
@@ -28,4 +34,10 @@ const appMenuItems = <MenuItem>[
     icon: Icons.credit_card,
   ),
   
+  MenuItem(
+    title: 'ProgressIndicators',
+    subTitle: 'Generales y controlados',
+    link: '/progress',
+    icon: Icons.refresh_rounded,
+  ),
 ];
