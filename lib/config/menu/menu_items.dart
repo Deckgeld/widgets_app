@@ -16,12 +16,6 @@ class MenuItem {
 
 const appMenuItems = <MenuItem>[
   MenuItem(
-    title: 'Inicio',
-    subTitle: 'Pantalla de inicio',
-    link: '/',
-    icon: Icons.home,
-  ),
-  MenuItem(
     title: 'Buttons',
     subTitle: 'Botones con estilo',
     link: '/buttons',
@@ -52,7 +46,7 @@ const appMenuItems = <MenuItem>[
     icon: Icons.check_box_outline_blank_rounded,
   ),
   MenuItem(
-    title: 'UI Controls = Titles',
+    title: 'UI Controls',
     subTitle: 'Una serie de controles en flutter',
     link: '/ui-controls',
     icon: Icons.car_rental_outlined,
@@ -68,5 +62,11 @@ const appMenuItems = <MenuItem>[
     subTitle: 'Listas inifinitas y pull to refresh',
     link: '/inifinite',
     icon: Icons.list_alt_rounded,
+  ),
+  MenuItem(
+    title: 'Riverpord Counter',
+    subTitle: 'Introduccion a riverpod',
+    link: '/counter-river',
+    icon: Icons.plus_one,
   ),
 ];
