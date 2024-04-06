@@ -11,7 +11,7 @@ class CounterScreen extends ConsumerWidget {
   //Agregar el parametro ref, para poder acceder a los providers
   Widget build(BuildContext context, WidgetRef ref) {
     final clickCounter = ref.watch(counterProvider);
-    final isDarkMode = ref.watch(isDarkmodeProvider);
+    final isDarkMode = ref.watch(themeNotifierProvider).isDarkMode;
     
 
     return Scaffold(
@@ -21,7 +21,7 @@ class CounterScreen extends ConsumerWidget {
             IconButton(
               icon: Icon(isDarkMode ? Icons.dark_mode_outlined : Icons.light_mode_outlined),
               onPressed: () {
-                ref.read(isDarkmodeProvider.notifier).state = !isDarkMode;
+                ref.read(themeNotifierProvider.notifier).toggleDarkmode();
               },
             )
           ],
