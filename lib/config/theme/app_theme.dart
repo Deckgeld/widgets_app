@@ -9,17 +9,17 @@ const colorList = <Color>[
 ];
 
 class AppTheme {
+  final bool isDarkMode;
   final int selectColor;
 
-  AppTheme({required this.selectColor})
+  AppTheme({required this.selectColor, required this.isDarkMode})
       : assert(selectColor >= 0, 'Select color must be greater than 0'),
-        assert(selectColor < colorList.length, 'Select color must be less than ${colorList.length}');
+        assert(selectColor < colorList.length,
+            'Select color must be less than ${colorList.length}');
 
   ThemeData getTheme() => ThemeData(
-        //useMaterial3: true,
-        colorSchemeSeed: colorList[selectColor],
-        appBarTheme: const AppBarTheme(
-          centerTitle: false
-        )
-      );
+      brightness: isDarkMode ? Brightness.dark : Brightness.light,
+      //useMaterial3: true,
+      colorSchemeSeed: colorList[selectColor],
+      appBarTheme: const AppBarTheme(centerTitle: false));
 }
