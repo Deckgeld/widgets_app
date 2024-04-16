@@ -27,5 +27,52 @@ const appMenuItems = <MenuItem>[
     link: '/cards',
     icon: Icons.credit_card,
   ),
-  
+  MenuItem(
+    title: 'Progress Indicators',
+    subTitle: 'Generales y controlados',
+    link: '/progress',
+    icon: Icons.refresh_rounded,
+  ),
+  MenuItem(
+    title: 'Snackbars y diálogos',
+    subTitle: 'Indicadores en pantalla ',
+    link: '/snackbars',
+    icon: Icons.info_outline,
+  ),
+  MenuItem(
+    title: 'Animated container',
+    subTitle: 'Stateful widget animado',
+    link: '/animated',
+    icon: Icons.check_box_outline_blank_rounded,
+  ),
+  MenuItem(
+    title: 'UI Controls',
+    subTitle: 'Una serie de controles en flutter',
+    link: '/ui-controls',
+    icon: Icons.car_rental_outlined,
+  ),
+  MenuItem(
+    title: 'Introduccion a la aplicación',
+    subTitle: 'Tutorial introductorio',
+    link: '/tutorial',
+    icon: Icons.school_outlined,
+  ),
+  MenuItem(
+    title: 'InfiniteScroll y pull',
+    subTitle: 'Listas inifinitas y pull to refresh',
+    link: '/inifinite',
+    icon: Icons.list_alt_rounded,
+  ),
+  MenuItem(
+    title: 'Riverpord Counter',
+    subTitle: 'Introduccion a riverpod',
+    link: '/counter-river',
+    icon: Icons.plus_one,
+  ),
+  MenuItem(
+    title: 'Theme Changer',
+    subTitle: 'Cambia el tema de la aplicación',
+    link: '/theme-changer',
+    icon: Icons.palette_outlined,
+  ),
 ];
